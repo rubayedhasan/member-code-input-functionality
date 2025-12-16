@@ -67,10 +67,13 @@ transactionDate.value = `${new Date().getFullYear()}-${
 // handler: member code field input
 memberCodeField.addEventListener("input", () => {
   // get the member
-  const codeOfMember = parseInt(memberCodeField.value);
+  const codeOfMember = memberCodeField.value;
+  console.log(codeOfMember);
   const member = all.find(
     (member) =>
-      member?.memberCode === codeOfMember || member?.memberName === codeOfMember
+      member?.memberCode === parseInt(codeOfMember) ||
+      (member?.memberName).toLowerCase().trim() ===
+        codeOfMember.toLowerCase().trim()
   );
 
   // validation:: show & hide the popup
