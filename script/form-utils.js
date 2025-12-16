@@ -1,14 +1,3 @@
-// common things
-// let all = [];
-
-// fetching the data from local
-// fetch("./fake-data.json")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     all = data;
-//   })
-//   .catch((error) => console.log(error));
-
 // fake data
 const all = [
   {
@@ -63,9 +52,12 @@ const all = [
   },
 ];
 
+// access the input field
 const memberCodeField = document.querySelector("#member-code");
 const transactionDate = document.querySelector("#transaction-date");
 const popupContainer = document.querySelector("#info-popup-container");
+const productNameContainer = document.querySelector("#product-name");
+const productCodeField = document.querySelector("#product-code");
 
 // transactionDate.value = new Date().toLocaleDateString();
 transactionDate.value = `${new Date().getFullYear()}-${
@@ -74,9 +66,14 @@ transactionDate.value = `${new Date().getFullYear()}-${
 
 // handler: member code field input
 memberCodeField.addEventListener("input", () => {
+  // get the member
   const codeOfMember = parseInt(memberCodeField.value);
-  const member = all.find((member) => member?.memberCode === codeOfMember);
+  const member = all.find(
+    (member) =>
+      member?.memberCode === codeOfMember || member?.memberName === codeOfMember
+  );
 
+  // validation:: show & hide the popup
   if (member) {
     popupContainer.classList.remove("hide");
     popupContainer.classList.add("show");
@@ -85,6 +82,7 @@ memberCodeField.addEventListener("input", () => {
     popupContainer.classList.add("hide");
   }
 
+  // display the member information in a container as popup
   popupContainer.innerHTML = `
               <h5 id="person-name" class="person-title">${member?.memberName}</h5>
               <h4 id="person-code" class="person-id">${member?.memberCode}</h4>
@@ -104,7 +102,24 @@ popupContainer.addEventListener("click", () => {
   // set member code field's value
   memberCodeField.value = `${pName} - ${pCode}`;
 
-  // hid the popup
+  // hide the popup after selecting
   popupContainer.classList.remove("show");
   popupContainer.classList.add("hide");
+});
+
+// handler:: generate the product code on selecting the product
+productNameContainer.addEventListener("change", (event) => {
+  // get the product name
+  const productName =
+    productNameContainer.options[event.target.selectedIndex].innerText;
+
+  // get the member code
+  const memberLongCode = memberCodeField.value.split("-");
+  const memberCode = memberLongCode[1].trim();
+
+  // generate the product code
+  const productCode = `${productName}.${memberCode}`;
+
+  // display the product code
+  productCodeField.value = productCode;
 });

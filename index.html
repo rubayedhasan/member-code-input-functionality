@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto <Form></Form></title>
+    <title>Member Input Functionality</title>
     <link rel="stylesheet" href="./styles.css/style.css" />
   </head>
   <body>
@@ -22,11 +22,31 @@
           </div>
         </div>
 
-        <!-- loan id  -->
+        <!-- product name  -->
         <div class="field-container">
-          <div class="field-name"><label for="loan-id">Loan ID</label></div>
+          <div class="field-name">
+            <label for="product-name">Product</label>
+          </div>
           <div class="field-input">
-            <input type="text" name="loan-id" id="loan-id" />
+            <select name="product-name" id="product-name">
+              <option value="">Select Your Product</option>
+              <option value="agrosor">Agrosor</option>
+              <option value="agrosor-m">Agrosor-M</option>
+              <option value="jagoron">Jagoron</option>
+              <option value="jagoron">Jagoron-M</option>
+              <option value="sufolon">Sufolon-M</option>
+              <option value="sufolon-m">Sufolon-M</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- product code  -->
+        <div class="field-container">
+          <div class="field-name">
+            <label for="product-code">Product Code</label>
+          </div>
+          <div class="field-input">
+            <input type="text" name="product-code" id="product-code" disabled />
           </div>
         </div>
 

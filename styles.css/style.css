@@ -111,6 +111,10 @@ form {
   margin-bottom: 5px;
 }
 
+#product-code {
+  background-color: rgba(0, 128, 128, 0.116);
+}
+
 #transaction-date {
   font-weight: 300;
   background: #0000002e;
