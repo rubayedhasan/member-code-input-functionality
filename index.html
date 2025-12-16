@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto <Form></Form></title>
+    <link rel="stylesheet" href="./styles.css/style.css" />
+  </head>
+  <body>
+    <!-- main section  -->
+    <main>
+      <h2 class="title">Add Loan Transaction</h2>
+      <form action="">
+        <!-- member code  -->
+        <div class="field-container">
+          <div class="field-name"><label for="member-code">Member</label></div>
+          <div class="field-input">
+            <input type="text" name="member-code" id="member-code" />
+
+            <!-- member information popup container  -->
+            <div id="info-popup-container" class="hide"></div>
+          </div>
+        </div>
+
+        <!-- loan id  -->
+        <div class="field-container">
+          <div class="field-name"><label for="loan-id">Loan ID</label></div>
+          <div class="field-input">
+            <input type="text" name="loan-id" id="loan-id" />
+          </div>
+        </div>
+
+        <!-- Transaction date  -->
+        <div class="field-container">
+          <div class="field-name">
+            <label for="transaction-date">Transaction Date</label>
+          </div>
+          <div class="field-input">
+            <input
+              type="text"
+              name="transaction-date"
+              id="transaction-date"
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- payment method  -->
+        <div class="field-container">
+          <div class="field-name">
+            <label for="payment-method">Method of Payment</label>
+          </div>
+          <div class="field-input">
+            <select name="payment-method" id="payment-method">
+              <option value="cash">Cash</option>
+              <option value="bank">Bank</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- amount  -->
+        <div class="field-container">
+          <div class="field-name"><label for="amount">Amount</label></div>
+          <div class="field-input">
+            <input type="number" name="amount" id="amount" min="0" />
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- script  -->
+    <script src="./script/form-utils.js"></script>
+  </body>
+</html>

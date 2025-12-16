@@ -1,0 +1,117 @@
+/* import: google font "roboto"  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* common styles  */
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  color: #131313;
+  font-family: "Roboto", sans-serif;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  width: 40%;
+  margin: 50px auto 0;
+}
+
+.title {
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid rgba(0, 0, 255, 0.619);
+  background-color: rgba(0, 0, 255, 0.619);
+}
+
+form {
+  align-items: center;
+  padding: 30px 20px 20px;
+  border: 1px solid #131313;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: none;
+}
+
+.field-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.field-name label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.field-input {
+  position: relative;
+}
+
+#info-popup-container {
+  color: rgb(238, 239, 240);
+  left: 0;
+  top: 35px;
+  width: 75%;
+  z-index: 10;
+  padding: 15px 25px;
+  position: absolute;
+  border: 1px solid aliceblue;
+  /* background-color: rgb(238, 239, 240); */
+  background-color: rgb(0, 128, 128);
+  border-radius: 8px;
+}
+
+#info-popup-container:hover {
+  background: linear-gradient(45deg, rgb(0, 128, 128), rgb(0, 180, 180));
+  color: rgb(238, 239, 240);
+  transition: 0.6s ease;
+}
+
+.field-input input,
+.field-input select {
+  color: #131313cd;
+  width: 75%;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid rgba(0, 0, 0, 0.227);
+}
+
+/* popup container's child styles  */
+.person-info {
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.person-title {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 3px;
+}
+
+.person-id {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+#transaction-date {
+  font-weight: 300;
+  background: #0000002e;
+}
